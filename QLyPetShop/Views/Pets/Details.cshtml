@@ -1,0 +1,35 @@
+﻿@model QLyPetShop.Models.Pet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenPet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenPet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dichvu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dichvu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PetID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

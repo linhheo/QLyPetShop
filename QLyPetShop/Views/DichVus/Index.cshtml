@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QLyPetShop.Models.DichVu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Dichvu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dichvu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DichvuID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DichvuID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DichvuID })
+        </td>
+    </tr>
+}
+
+</table>
